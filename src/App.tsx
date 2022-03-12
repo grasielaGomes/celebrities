@@ -1,5 +1,14 @@
-function App() {
-  return <h1 className="text-primary">Hello, Celebrities</h1>;
-}
+import { Celebrity } from "pages/Celebrity";
+import { Home } from "pages/Home";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path=":celebrity" element={<Celebrity />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
