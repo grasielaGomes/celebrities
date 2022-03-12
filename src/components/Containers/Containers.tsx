@@ -19,7 +19,7 @@ export const Grid = ({
   xlColumns = '1',
   gap = '4',
 }: IGrid) => {
-  const style = `grid grid-cols-1 sm:grid-cols-${smColumns} md:grid-cols-${mdColumns} lg:grid-cols-${lgColumns} xl:grid-cols-${xlColumns} gap-${gap}`;
+  const style = `grid grid-flow-col grid-cols-1 sm:grid-cols-${smColumns} md:grid-cols-${mdColumns} lg:grid-cols-${lgColumns} xl:grid-cols-${xlColumns} gap-${gap}`;
   return (
     <section key={gridKey} className={style}>
       {children}
