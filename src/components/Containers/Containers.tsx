@@ -7,7 +7,7 @@ export const PageTemplate = ({
 }: IContainers) => {
   return (
     <section
-      className={`mx-auto h-screen grid content-${alignContent} lg:w-${maxWidth}`}
+      className={`mx-auto min-h-screen grid content-${alignContent} lg:w-${maxWidth}`}
     >
       {children}
     </section>
