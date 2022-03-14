@@ -1,31 +1,31 @@
-import { IImageButton, IParentButton } from './Interfaces';
+import { IImageButton, IParentButton } from "./Interfaces";
 
 const disabledStyles = (isDisabled: boolean): string => {
-  return isDisabled ? 'filter grayscale cursor-not-allowed' : '';
+  return isDisabled ? "filter grayscale cursor-not-allowed" : "";
 };
 
 export const ImageButton = ({
-  imgUrl = '',
-  altText = '',
-  borderRadius = 'none',
-  shadow = 'none',
-  filter = 'none',
-  hoverColor = '',
+  imgUrl = "",
+  altText = "",
+  borderRadius = "none",
+  shadow = "none",
+  filter = "none",
+  hoverColor = "",
   isDisabled = false,
   handleClick,
-  width = 'full',
+  width = "full",
 }: IImageButton) => {
-  const animation = `transition-colors duration-300 ease-in-out transform ${hoverColor}`;
+  const animation = `transition-colors duration-300 ease-in-out transform hover:${hoverColor}`;
   const styles = `rounded-${borderRadius} w-${width} ${filter} ${shadow}`;
   return (
-    <button
-      disabled={isDisabled}
-      type="button"
-      className={`${styles} ${animation} ${disabledStyles(isDisabled)}`}
-      onClick={handleClick}
-    >
-      <img src={imgUrl} alt={altText} />
-    </button>
+      <button
+        disabled={isDisabled}
+        type="button"
+        className={`${styles} ${animation} ${disabledStyles(isDisabled)}`}
+        onClick={handleClick}
+      >
+        <img src={imgUrl} alt={altText} width="500px" height="500px" className="mx-auto" />
+      </button>
   );
 };
 

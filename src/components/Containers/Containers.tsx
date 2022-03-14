@@ -1,11 +1,9 @@
-import { IGrid, ICard, IFlex, IContainers } from './Interfaces';
+import { IGrid, ICard, IFlex, IContainers } from "./Interfaces";
 
 export const PageTemplate = ({ children }: IContainers) => {
   return (
-    <main className="slate-100">
-      <section className="w-full min-h-screen mx-auto bg-white 2xl:w-3/4">
-        {children}
-      </section>
+    <main className="bg-black">
+      <section className="w-full min-h-screen">{children}</section>
     </main>
   );
 };
@@ -13,13 +11,13 @@ export const PageTemplate = ({ children }: IContainers) => {
 export const Grid = ({
   gridKey,
   children,
-  smColumns = '1',
-  mdColumns = '1',
-  lgColumns = '1',
-  xlColumns = '1',
-  gap = '4',
+  smColumns = "2",
+  mdColumns = "1",
+  lgColumns = "1",
+  xlColumns = "1",
+  gap = "4",
 }: IGrid) => {
-  const style = `grid grid-flow-col grid-cols-1 sm:grid-cols-${smColumns} md:grid-cols-${mdColumns} lg:grid-cols-${lgColumns} xl:grid-cols-${xlColumns} gap-${gap}`;
+  const style = `grid grid-cols-1 sm:grid-cols-${smColumns} md:grid-cols-${mdColumns} lg:grid-cols-${lgColumns} xl:grid-cols-${xlColumns} gap-${gap}`;
   return (
     <section key={gridKey} className={style}>
       {children}
@@ -30,12 +28,12 @@ export const Grid = ({
 export const Card = ({
   cardKey,
   children,
-  color = 'transparent',
-  borderRadius = 'rounded',
-  containerDecoration = '',
+  color = "transparent",
+  borderRadius = "rounded",
+  containerDecoration = "",
   isOutlined = true,
-  paddingX = '5',
-  paddingY = '5',
+  paddingX = "5",
+  paddingY = "5",
 }: ICard) => {
   const style = `py-${paddingY} px-${paddingX} rounded-${borderRadius} ${containerDecoration} ${
     isOutlined ? `border border-${color}` : `bg-${color}`
@@ -50,9 +48,9 @@ export const Card = ({
 export const Flex = ({
   flexKey,
   children,
-  gap = '4',
-  alignItems = 'center',
-  justifyContent = 'between',
+  gap = "4",
+  alignItems = "center",
+  justifyContent = "between",
 }: IFlex) => {
   const style = `flex w-full gap-${gap} items-${alignItems} justify-${justifyContent}`;
   return (
