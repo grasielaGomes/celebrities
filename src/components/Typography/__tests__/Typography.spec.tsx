@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Label, Caption, Body, Heading5, Heading4, Heading6 } from '../Typography';
+import { Label, Caption, Body, Heading5, Heading4, Heading6, Heading1 } from '../Typography';
 
 describe('Typography', () => {
   const text = 'Text';
@@ -24,6 +24,15 @@ describe('Typography', () => {
 
     expect(screen.getByText(text)).toBeInTheDocument();
   });
+
+  test("Heading1 should render with props values", () => {
+    render(
+      <Heading1 text={text} color={color} textDecoration={textDecoration} />
+    );
+
+    expect(screen.getByText(text)).toBeInTheDocument();
+  });
+
   test('Heading4 should render with props values', () => {
     render(
       <Heading4 text={text} color={color} textDecoration={textDecoration} />,
