@@ -15,7 +15,7 @@ export const ImageButton = ({
   handleClick,
   width = "full",
 }: IImageButton) => {
-  const animation = `transition-colors duration-300 ease-in-out transform hover:${hoverColor}`;
+  const animation = `transition-all duration-300 ease-in-out transform hover:${hoverColor}`;
   const styles = `rounded-${borderRadius} w-${width} ${filter} ${shadow}`;
   return (
       <button
