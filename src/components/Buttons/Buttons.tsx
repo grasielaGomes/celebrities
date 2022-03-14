@@ -1,3 +1,4 @@
+import { useImage } from "hooks/useImage";
 import { IImageButton, IParentButton } from "./Interfaces";
 
 const disabledStyles = (isDisabled: boolean): string => {
@@ -17,9 +18,11 @@ export const ImageButton = ({
   handleHover,
   handleMouseOut,
 }: IImageButton) => {
+  const { hasLoaded } = useImage(imgUrl);
   const animation = `transition-all duration-300 ease-in-out transform hover:${hoverColor}`;
   const styles = `rounded-${borderRadius} w-${width} ${filter} ${shadow}`;
   return (
+    hasLoaded ?
     <button
       disabled={isDisabled}
       type="button"
@@ -36,6 +39,7 @@ export const ImageButton = ({
         className="mx-auto"
       />
     </button>
+    : <div className={`w-${width} bg-neutral-700 animate-pulse`} />
   );
 };
 
