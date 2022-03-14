@@ -6,7 +6,8 @@ import { useCelebrites } from "hooks/useCelebrities";
 import { Fragment } from "react";
 
 export const Home = () => {
-  const { titleColor, setTitleColor, baseUrl } = useCelebrites();
+  const { titleColor, setTitleColor, baseUrl, handleButtonClick } =
+    useCelebrites();
   return (
     <PageTemplate>
       <Heading1
@@ -26,6 +27,7 @@ export const Home = () => {
                 hoverColor="grayscale-0 bg-primary"
                 handleHover={() => setTitleColor("primary")}
                 handleMouseOut={() => setTitleColor("white")}
+                handleClick={() => handleButtonClick(name)}
               />
             </Fragment>
           );
