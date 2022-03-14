@@ -1,7 +1,7 @@
 import { ImageButton } from "components/Buttons/Buttons";
 import { Grid, PageTemplate } from "components/Containers/Containers";
 import { Heading1 } from "components/Typography/Typography";
-import { CelebryObj } from "helper/CelebrityObj";
+import { CelebrityObj } from "helper/CelebrityObj";
 import { useCelebrities } from "hooks/useCelebrities";
 import { Fragment } from "react";
 
@@ -16,7 +16,7 @@ export const Home = () => {
         textDecoration="py-10 tracking-wide pl-10"
       />
       <Grid mdColumns="2" lgColumns="3" xlColumns="6" gap="0">
-        {CelebryObj.map(({ name }) => {
+        {CelebrityObj.map(({ name }) => {
           return (
             <Fragment key={name}>
               <ImageButton
