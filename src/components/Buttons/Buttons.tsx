@@ -14,18 +14,28 @@ export const ImageButton = ({
   isDisabled = false,
   handleClick,
   width = "full",
+  handleHover,
+  handleMouseOut,
 }: IImageButton) => {
   const animation = `transition-all duration-300 ease-in-out transform hover:${hoverColor}`;
   const styles = `rounded-${borderRadius} w-${width} ${filter} ${shadow}`;
   return (
-      <button
-        disabled={isDisabled}
-        type="button"
-        className={`${styles} ${animation} ${disabledStyles(isDisabled)}`}
-        onClick={handleClick}
-      >
-        <img src={imgUrl} alt={altText} width="500px" height="500px" className="mx-auto" />
-      </button>
+    <button
+      disabled={isDisabled}
+      type="button"
+      className={`${styles} ${animation} ${disabledStyles(isDisabled)}`}
+      onClick={handleClick}
+      onMouseOver={handleHover}
+      onMouseOut={handleMouseOut}
+    >
+      <img
+        src={imgUrl}
+        alt={altText}
+        width="500px"
+        height="500px"
+        className="mx-auto"
+      />
+    </button>
   );
 };
 

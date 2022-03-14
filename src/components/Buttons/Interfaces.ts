@@ -1,8 +1,10 @@
-import React, { ReactElement } from 'react';
+import React, { MouseEventHandler, ReactElement } from 'react';
 
 export interface IButtons {
   isDisabled?: boolean;
   handleClick?: React.MouseEventHandler<HTMLButtonElement>;
+  handleHover?: MouseEventHandler<HTMLButtonElement> | undefined;
+  handleMouseOut?: MouseEventHandler<HTMLButtonElement> | undefined;
   hoverColor?: string;
   ariaLabel?: string;
 }
