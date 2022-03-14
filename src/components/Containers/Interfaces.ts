@@ -1,5 +1,7 @@
 export interface IContainers {
   children: JSX.Element | JSX.Element[];
+  maxWidth?: string;
+  alignContent?: string;
 }
 
 export interface IGrid extends IContainers {

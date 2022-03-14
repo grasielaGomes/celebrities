@@ -1,10 +1,16 @@
 import { IGrid, ICard, IFlex, IContainers } from "./Interfaces";
 
-export const PageTemplate = ({ children }: IContainers) => {
+export const PageTemplate = ({
+  children,
+  maxWidth = "full",
+  alignContent = "center",
+}: IContainers) => {
   return (
-    <main className="bg-black">
-      <section className="w-full min-h-screen">{children}</section>
-    </main>
+    <section
+      className={`mx-auto h-screen grid content-${alignContent} lg:w-${maxWidth}`}
+    >
+      {children}
+    </section>
   );
 };
 
