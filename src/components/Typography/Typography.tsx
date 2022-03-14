@@ -60,6 +60,25 @@ export const Body = ({
   );
 };
 
+export const Heading1 = ({
+  text,
+  textDecoration,
+  color,
+  isBold = false,
+  isItalic = false,
+}: ITypography) => {
+  const style = `${isBold ? "font-bold" : "font-medium"}`;
+  return (
+    <h1
+      className={
+        typographyStyles("4xl", color, textDecoration, false, isItalic) + style
+      }
+    >
+      {text}
+    </h1>
+  );
+};
+
 export const Heading4 = ({
   text,
   textDecoration,
@@ -70,7 +89,9 @@ export const Heading4 = ({
   const style = `${isBold ? 'font-bold' : 'font-medium'}`;
   return (
     <h4
-      className={typographyStyles('2xl', color, textDecoration, false, isItalic) + style}
+      className={
+        typographyStyles("2xl", color, textDecoration, false, isItalic) + style
+      }
     >
       {text}
     </h4>
