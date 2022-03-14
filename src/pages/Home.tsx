@@ -2,12 +2,12 @@ import { ImageButton } from "components/Buttons/Buttons";
 import { Grid, PageTemplate } from "components/Containers/Containers";
 import { Heading1 } from "components/Typography/Typography";
 import { CelebryObj } from "helper/CelebrityObj";
-import { useCelebrites } from "hooks/useCelebrities";
+import { useCelebrities } from "hooks/useCelebrities";
 import { Fragment } from "react";
 
 export const Home = () => {
   const { titleColor, setTitleColor, baseUrl, handleButtonClick } =
-    useCelebrites();
+    useCelebrities();
   return (
     <PageTemplate>
       <Heading1

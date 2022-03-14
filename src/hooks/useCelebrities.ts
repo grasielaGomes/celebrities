@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-export const useCelebrites = () => {
+export const useCelebrities = () => {
   const baseUrl = "https://raw.githubusercontent.com/grasielaGomes/images/main";
   const [titleColor, setTitleColor] = useState("white");
   const navigate = useNavigate();
@@ -10,5 +10,11 @@ export const useCelebrites = () => {
     navigate(`/${celebrityName}`);
   }
 
-  return { titleColor, setTitleColor, baseUrl, handleButtonClick };
+  return {
+    titleColor,
+    setTitleColor,
+    baseUrl,
+    handleButtonClick,
+    navigate,
+  };
 }

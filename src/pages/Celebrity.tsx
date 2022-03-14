@@ -16,17 +16,24 @@ import {
   ReturnIcon,
 } from "components/Images/Images";
 import { Heading1, Heading6 } from "components/Typography/Typography";
+import { useCelebrities } from "hooks/useCelebrities";
 
 export const Celebrity = () => {
+  const { navigate } = useCelebrities();
   return (
     <PageTemplate maxWidth="3/4">
       <div className="h-full my-auto">
         <TextButton
+          handleClick={() => navigate("/")}
           child={
             <>
               <Flex>
                 <ReturnIcon />
-                <Heading6 text="Return to all celebrities" color="white" textDecoration="hover:text-amber-300" />
+                <Heading6
+                  text="Return to all celebrities"
+                  color="white"
+                  textDecoration="hover:text-amber-300"
+                />
               </Flex>
             </>
           }
