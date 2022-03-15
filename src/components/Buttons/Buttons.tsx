@@ -39,7 +39,7 @@ export const ImageButton = ({
         className="mx-auto"
       />
     </button>
-    : <div className={`w-${width} bg-neutral-700 animate-pulse`} />
+    : <div className={`w-${width} bg-neutral-700 animate-pulse`} title="loader" />
   );
 };
 

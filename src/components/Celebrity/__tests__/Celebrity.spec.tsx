@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import { NationalityIcon } from "components/Images/Images";
 import { CelebrityDetail } from "../Celebrity";
 
-describe("Buttons", () => {
+describe("Celebrity components", () => {
   const title = "Title";
   const text = "Text";
 
